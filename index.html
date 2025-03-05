@@ -95,13 +95,43 @@
       margin: 0;
       padding: 0;
     }
-    
+   /*
     header {
       background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
       color: white;
       padding: 80px 5px;
       text-align: center;
     }
+    */
+
+header {
+  background: url('fondo.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 300px; /* Puedes ajustar la altura según lo necesites */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Para que el texto contraste sobre la imagen */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Opcional: si quieres un overlay para mejorar la legibilidad */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Ajusta la opacidad a tu gusto */
+  z-index: 1;
+}
+
+header .header-content {
+  position: relative;
+  z-index: 2;
+}
     
     .container {
       max-width: 1200px;
@@ -418,12 +448,20 @@
   
   <!-- Contenido Principal (inicialmente oculto) -->
   <div id="main-content">
-    <header>
+   <!--
+	  <header>
       <h1>PROYECTO VETERANO</h1>
       <h4>by Xavi Villaronga García</h4>
       <p>Compositor y Artista de Música Pop</p>
     </header>
-    
+-->
+    <header>
+  <div class="header-content">
+    <h1>PROYECTO VETERANO</h1>
+    <p>Xavi Villaronga García</p>
+    <p>Compositor y Artista de Música Pop</p>
+  </div>
+</header>
     <nav>
       <div class="nav-container">
         <span class="menu-toggle"><i class="fas fa-bars"></i></span>
