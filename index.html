@@ -756,6 +756,27 @@ Un saludo.</p>
         });
       });
     }
+
+	document.addEventListener("DOMContentLoaded", function () {
+    inicializarFuncionalidadPrincipal();
+    controlarAudio();
+});
+
+function controlarAudio() {
+    const audios = document.querySelectorAll("audio");
+
+    audios.forEach(audio => {
+        audio.addEventListener("play", function () {
+            // Pausar todos los audios excepto el que se está reproduciendo
+            audios.forEach(otherAudio => {
+                if (otherAudio !== audio) {
+                    otherAudio.pause();
+                }
+            });
+        });
+    });
+}
+
   </script>
 </body>
 </html>
